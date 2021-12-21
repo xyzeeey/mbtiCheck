@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MBTI</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="header">
+                <h1>MBTI<br>성격 유형 궁합</h1>
+            </div>
+            <div class="section-selector">
+                <div class="box box-top">
+                    <select class="selector" required="" onchange="handleOnChangeTop(this)">
+                        <option selected="" disabled="" value="">나의 MBTI</option>
+                        <option value="1">ENTP</option>
+                        <option value="2">ENTJ</option>
+                        <option value="3">ENFP</option>
+                        <option value="4">ENFJ</option>
+                        <option value="5">ESTP</option>
+                        <option value="6">ESTJ</option>
+                        <option value="7">ESFP</option>
+                        <option value="8">ESFJ</option>
+                        <option value="9">INTP</option>
+                        <option value="10">INTJ</option>
+                        <option value="11">INFP</option>
+                        <option value="12">INFJ</option>
+                        <option value="13">ISTP</option>
+                        <option value="14">ISTJ</option>
+                        <option value="15">ISFP</option>
+                        <option value="16">ISFJ</option>
+                    </select>
+                </div>
+                <div class="box box-btm">
+                    <select class="selector" required="" onchange="handleOnChangeBtm(this)">
+                        <option selected="" disabled="" value="">상대방의 MBTI</option>
+                        <option value="1">ENTP</option>
+                        <option value="2">ENTJ</option>
+                        <option value="3">ENFP</option>
+                        <option value="4">ENFJ</option>
+                        <option value="5">ESTP</option>
+                        <option value="6">ESTJ</option>
+                        <option value="7">ESFP</option>
+                        <option value="8">ESFJ</option>
+                        <option value="9">INTP</option>
+                        <option value="10">INTJ</option>
+                        <option value="11">INFP</option>
+                        <option value="12">INFJ</option>
+                        <option value="13">ISTP</option>
+                        <option value="14">ISTJ</option>
+                        <option value="15">ISFP</option>
+                        <option value="16">ISFJ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn">
+                <button class="btn-result">결과 확인 하기</button>
+            </div>
+        </div>
+        <div class="result">
+            <span class="material-icons btn-close" onclick="btnClose()">close</span>
+            <span class="result-mbti"></span>
+            <span class="result-title"></span>
+            <span class="result-desc"></span>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
