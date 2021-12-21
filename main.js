@@ -100,27 +100,27 @@ const mbtiInfo = {
 const pointInfo = {
     point1: {
         title: '맞지않는 관계',
-        desc: '두 사람 모두가 무조건 양보해야하고 공감이 필요함. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ea omnis, voluptate doloribus molestiae ut, nostrum nulla provident aspernatur temporibus fugiat iste, ipsa quisquam similique molestias distinctio explicabo! Nostrum eligendi velit vitae vero corporis doloremque expedita unde reiciendis eius temporibus ut reprehenderit officia, non tenetur accusantium dicta. Optio, ea unde?',
+        desc: '두 사람 모두가 무조건 양보해야하고 공감이 필요함.',
         bgcolor: '#d32e42'
     },
     point2: {
         title: '갈등 관계',
-        desc: '서로 타협하고 성숙해져야 유지될 수 있음. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ea omnis, voluptate doloribus molestiae ut, nostrum nulla provident aspernatur temporibus fugiat iste, ipsa quisquam similique molestias distinctio explicabo! Nostrum eligendi velit vitae vero corporis doloremque expedita unde reiciendis eius temporibus ut reprehenderit officia, non tenetur accusantium dicta. Optio, ea unde?',
+        desc: '서로 타협하고 성숙해져야 유지될 수 있음.',
         bgcolor: '#ff8245'
     },
     point3: {
         title: '잠재적 관계',
-        desc: '끈끈한 관계를 위해서는 서로의 가치에 변화를 찾아야함. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ea omnis, voluptate doloribus molestiae ut, nostrum nulla provident aspernatur temporibus fugiat iste, ipsa quisquam similique molestias distinctio explicabo! Nostrum eligendi velit vitae vero corporis doloremque expedita unde reiciendis eius temporibus ut reprehenderit officia, non tenetur accusantium dicta. Optio, ea unde?',
+        desc: '끈끈한 관계를 위해서는 서로의 가치에 변화를 찾아야함.',
         bgcolor: '#29ad5c'
     },
     point4: {
         title: '끈끈한 관계',
-        desc: '어려움이 있을 수 있지만 타협점을 찾음. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ea omnis, voluptate doloribus molestiae ut, nostrum nulla provident aspernatur temporibus fugiat iste, ipsa quisquam similique molestias distinctio explicabo! Nostrum eligendi velit vitae vero corporis doloremque expedita unde reiciendis eius temporibus ut reprehenderit officia, non tenetur accusantium dicta. Optio, ea unde?',
+        desc: '어려움이 있을 수 있지만 타협점을 찾음.',
         bgcolor: '#4da1dc'
     },
     point5: {
         title: '이상적인 관계',
-        desc: '문제가 잘 해결되고 관계가 자연스럽게 발전됨. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ea omnis, voluptate doloribus molestiae ut, nostrum nulla provident aspernatur temporibus fugiat iste, ipsa quisquam similique molestias distinctio explicabo! Nostrum eligendi velit vitae vero corporis doloremque expedita unde reiciendis eius temporibus ut reprehenderit officia, non tenetur accusantium dicta. Optio, ea unde?',
+        desc: '문제가 잘 해결되고 관계가 자연스럽게 발전됨.',
         bgcolor: '#296ce4'
     },
 }
@@ -131,6 +131,7 @@ const resultElem = document.querySelector('.result');
 const resultMbtiElem = document.querySelector('.result-mbti');
 const resultTitleElem = document.querySelector('.result-title');
 const resultTitleDesc = document.querySelector('.result-desc');
+const wellTypeElem = document.querySelector('.well-type');
 
 const selectorTop = document.querySelector('.box-top .selector');
 const selectorBtm = document.querySelector('.box-btm .selector');
@@ -152,8 +153,17 @@ function handleOnChangeBtm(e) {
 }
 
 function result() {
+    wellTypeElem.innerHTML = '';
     let mbtiPoint = 'point' + mbtiInfo[myMbti]['point'][otherMbti];
-    console.log(mbtiPoint, typeof mbtiPoint);
+    let keys = Object.keys(mbtiInfo[myMbti]['point']);  // 키 값만 배열로 저장
+
+    for (let i in keys) {
+        if (mbtiInfo[myMbti]['point'][keys[i]] == 5) {
+            console.log(keys[i]);
+            wellTypeElem.innerHTML += `<span>${keys[i]}</span>`
+        }
+    }
+    
     resultMbtiElem.textContent = `${myMbti.toUpperCase()} x ${otherMbti.toUpperCase()}`;
     resultTitleElem.textContent = pointInfo[mbtiPoint]['title'];
     resultTitleDesc.textContent = pointInfo[mbtiPoint]['desc'];

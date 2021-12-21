@@ -82,7 +82,7 @@ body {
     margin-bottom: 0.8em;
 }
 
-.result-title {
+.result .title {
     font-size: 20px;
     margin-bottom: 0.8em;
 }
@@ -90,8 +90,17 @@ body {
 .result-desc {
     font-size: 16px;
     line-height: 1.5;
+    margin-bottom: 1.5em;
 }
 
+div.well-type span {
+    display: inline-block;
+    font-size: 18px;
+    padding: 4px 16px;
+    margin-right: 0.3em;
+    border: 1px solid #000;
+    border-radius: 15px;
+}
 
 .btn-close {
     position: absolute;
