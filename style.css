@@ -30,7 +30,7 @@ body {
 
 .selector {
     width: 100%;
-    padding: 0.8em 0;
+    padding: 0.8em 1em;
     border: 1px solid #999;
     background: #fff;
     font-weight: 400;
@@ -39,7 +39,6 @@ body {
     color: #999;
     text-align: center;
     text-align-last: center;
-    text-align: center;
     -ms-text-align-last: center;
     -moz-text-align-last: center;
     -o-appearance: none;
