@@ -160,10 +160,10 @@ function result() {
     for (let i in keys) {
         if (mbtiInfo[myMbti]['point'][keys[i]] == 5) {
             console.log(keys[i]);
-            wellTypeElem.innerHTML += `<span>${keys[i]}</span>`
+            wellTypeElem.innerHTML += `<span>${keys[i].toUpperCase()}</span>`
         }
     }
-    
+
     resultMbtiElem.textContent = `${myMbti.toUpperCase()} x ${otherMbti.toUpperCase()}`;
     resultTitleElem.textContent = pointInfo[mbtiPoint]['title'];
     resultTitleDesc.textContent = pointInfo[mbtiPoint]['desc'];
