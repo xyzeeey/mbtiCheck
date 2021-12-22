@@ -87,26 +87,25 @@ body {
 .result-mbti {
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 0.8em;
 }
 
 .result .title {
     font-size: 20px;
-    margin-bottom: 0.8em;
+    margin: 1.6em 0 0.8em;
 }
 
 .result-desc {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 1.6em;
     word-break: keep-all;
 }
 
-div.well-type span {
+div.well-type span,
+div.bad-type span {
     display: inline-block;
     font-size: 18px;
-    padding: 4px 16px;
-    margin-right: 0.3em;
+    padding: 4px 14px;
+    margin-right: 0.4em;
     border: 1px solid #000;
     border-radius: 15px;
 }

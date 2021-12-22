@@ -132,6 +132,7 @@ const resultMbtiElem = document.querySelector('.result-mbti');
 const resultTitleElem = document.querySelector('.result-title');
 const resultTitleDesc = document.querySelector('.result-desc');
 const wellTypeElem = document.querySelector('.well-type');
+const badTypeElem = document.querySelector('.bad-type');
 
 const selectorTop = document.querySelector('.box-top .selector');
 const selectorBtm = document.querySelector('.box-btm .selector');
@@ -154,6 +155,7 @@ function handleOnChangeBtm(e) {
 
 function result() {
     wellTypeElem.innerHTML = '';
+    badTypeElem.innerHTML = '';
     let mbtiPoint = 'point' + mbtiInfo[myMbti]['point'][otherMbti];
     let keys = Object.keys(mbtiInfo[myMbti]['point']);  // 키 값만 배열로 저장
 
@@ -161,6 +163,9 @@ function result() {
         if (mbtiInfo[myMbti]['point'][keys[i]] == 5) {
             console.log(keys[i]);
             wellTypeElem.innerHTML += `<span>${keys[i].toUpperCase()}</span>`
+        }
+        if (mbtiInfo[myMbti]['point'][keys[i]] == 1) {
+            badTypeElem.innerHTML += `<span>${keys[i].toUpperCase()}</span>`
         }
     }
 
