@@ -171,6 +171,13 @@ function result() {
 
     resultMbtiElem.textContent = `${myMbti.toUpperCase()} x ${otherMbti.toUpperCase()}`;
     resultTitleElem.textContent = pointInfo[mbtiPoint]['title'];
+    if (myMbti == 'isfp' && otherMbti == 'isfj') {
+        resultTitleElem.innerHTML += '<span style="color: #d32e42; display: inline-block">&nbsp;근데 우린 잘 맞음</span>'
+    }
+    if (myMbti == 'isfj' && otherMbti == 'isfp') {
+        resultTitleElem.innerHTML += '<span style="color: #d32e42; display: inline-block">&nbsp;근데 우린 잘 맞음</span>'
+    }
+
     resultTitleDesc.textContent = pointInfo[mbtiPoint]['desc'];
     resultElem.style.background = pointInfo[mbtiPoint]['bgcolor'];
     resultElem.style.transform = 'translateX(0)';
